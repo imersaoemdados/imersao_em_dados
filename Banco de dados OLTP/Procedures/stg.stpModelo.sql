@@ -1,0 +1,15 @@
+USE [BI_Staging]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [stg].[stpOM_Mesasamori]
+AS BEGIN
+
+-- CÓDIGO
+
+END;
