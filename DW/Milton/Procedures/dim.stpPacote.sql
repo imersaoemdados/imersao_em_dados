@@ -25,12 +25,12 @@ SELECT DISTINCT
 INTO DW.dim.temp_Pacote  
 FROM BI_Staging.stg.OM_Mesasamori
 
-DELETE A
-      FROM dim.pacote A -- TABELA DESTINO (DW - NÃO É A TABELA TEMPORÁRIA - VCS CRIARAM A PARTIR DO CREATE TABLE)
+DELETE Destino
+      FROM dim.pacote Destino -- TABELA DESTINO (DW - NÃO É A TABELA TEMPORÁRIA - VCS CRIARAM A PARTIR DO CREATE TABLE)
      WHERE NOT EXISTS ( SELECT 1 
-                          FROM DW.dim.temp_Pacote B -- TABELA TEMPORARIA
-                         WHERE B.cd_pacote		= A.cd_pacote AND
-							   B.ds_origem		= A.ds_origem 
+                          FROM DW.dim.temp_Pacote Origem -- TABELA TEMPORARIA
+                         WHERE Origem.cd_pacote		= Destino.cd_pacote AND
+							   Origem.ds_origem		= Destino.ds_origem 
 							 );
 								
 								
