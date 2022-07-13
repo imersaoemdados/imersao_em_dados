@@ -1,0 +1,1 @@
+SELECT * FROM [stg].[OM_METAS]
