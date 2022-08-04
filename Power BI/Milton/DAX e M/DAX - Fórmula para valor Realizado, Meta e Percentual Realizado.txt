@@ -1,0 +1,5 @@
+Vlr Realizado = SUM('fato orcamento_matricial'[vl_valor_lancto])
+
+Vlr Meta = SUM('fato om_metas'[vl_meta])
+
+% Vlr Realizado = DIVIDE([Vlr Realizado], [Vlr Meta], 0)

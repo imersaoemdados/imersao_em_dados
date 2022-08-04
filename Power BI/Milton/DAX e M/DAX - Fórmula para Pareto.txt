@@ -1,0 +1,34 @@
+Pareto Pacote = 
+    VAR TOTAL_VENDAS = CALCULATE([Vlr Realizado], ALLSELECTED('fato orcamento_matricial')) 
+    VAR TOTAL_ATUAL = [Vlr Realizado]
+    VAR tbResumo =  
+                SUMMARIZE( 
+                    ALLSELECTED('fato orcamento_matricial'), 
+                    'dim pacote'[ds_pacote], 
+                    "Total", 
+                    [Vlr Realizado]
+                ) 
+    VAR TOTAL_ACUMULADO =  
+        SUMX( 
+            FILTER(tbResumo, [Total] >= TOTAL_ATUAL), [Total]) 
+    RETURN TOTAL_ACUMULADO /TOTAL_VENDAS
+
+
+
+
+
+
+Pareto Centro Custo = 
+    VAR TOTAL_VENDAS = CALCULATE([Vlr Realizado], ALLSELECTED('fato orcamento_matricial')) 
+    VAR TOTAL_ATUAL = [Vlr Realizado]
+    VAR tbResumo =  
+                SUMMARIZE( 
+                    ALLSELECTED('fato orcamento_matricial'), 
+                    'dim centro_custo'[ds_cc], 
+                    "Total", 
+                    [Vlr Realizado]
+                ) 
+    VAR TOTAL_ACUMULADO =  
+        SUMX( 
+            FILTER(tbResumo, [Total] >= TOTAL_ATUAL), [Total]) 
+    RETURN TOTAL_ACUMULADO /TOTAL_VENDAS

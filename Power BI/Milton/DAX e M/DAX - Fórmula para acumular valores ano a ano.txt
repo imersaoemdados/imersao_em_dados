@@ -1,0 +1,2 @@
+Vlr Meta Acumulado = TOTALYTD([Vlr Meta],'dim calendario'[dt_data])
+Vlr Realizado Acumulado = TOTALYTD([Vlr Realizado],'dim calendario'[dt_data])
